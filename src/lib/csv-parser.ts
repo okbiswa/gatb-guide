@@ -1,22 +1,26 @@
-import fs from "fs";
-import path from "path";
 import Papa from "papaparse";
 import type { Institute, CutoffRecord } from "./types";
 
-/**
- * Resolves the path to a data file relative to the project root.
- * Works in both development and Vercel production environments.
- */
-function getDataPath(filename: string): string {
-  return path.join(process.cwd(), "public", "data", filename);
+async function loadCsv(filename: string): Promise<string> {
+  const baseUrl =
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000";
+
+  const response = await fetch(`${baseUrl}/data/${filename}`, {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to load ${filename}`);
+  }
+
+  return await response.text();
 }
 
-/**
- * Parses the institutes CSV and returns typed Institute objects.
- * Filters out empty rows.
- */
-export function parseInstitutes(): Institute[] {
-  const csvContent = fs.readFileSync(getDataPath("institutes.csv"), "utf-8");
+export async function parseInstitutes(): Promise<Institute[]> {
+  const csvContent = await loadCsv("institutes.csv");
+
   const result = Papa.parse<Institute>(csvContent, {
     header: true,
     dynamicTyping: true,
@@ -29,15 +33,9 @@ export function parseInstitutes(): Institute[] {
   );
 }
 
-/**
- * Parses the master cutoffs CSV and returns typed CutoffRecord objects.
- * Filters out empty rows.
- */
-export function parseCutoffs(): CutoffRecord[] {
-  const csvContent = fs.readFileSync(
-    getDataPath("master_cutoffs.csv"),
-    "utf-8"
-  );
+export async function parseCutoffs(): Promise<CutoffRecord[]> {
+  const csvContent = await loadCsv("master_cutoffs.csv");
+
   const result = Papa.parse<CutoffRecord>(csvContent, {
     header: true,
     dynamicTyping: true,

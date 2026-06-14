@@ -10,8 +10,8 @@ import type { GroupedResults, UserInput } from "@/lib/types";
 export async function getRecommendations(
   input: UserInput
 ): Promise<GroupedResults> {
-  const institutes = parseInstitutes();
-  const cutoffs = parseCutoffs();
+  const institutes = await parseInstitutes();
+  const cutoffs = await parseCutoffs();
 
   return generateRecommendations(
     input.score,
