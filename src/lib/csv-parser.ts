@@ -2,16 +2,21 @@ import Papa from "papaparse";
 import type { Institute, CutoffRecord } from "./types";
 
 async function loadCsv(filename: string): Promise<string> {
-  const baseUrl =
-    process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000";
+  const baseUrl = "https://gatb-guide.vercel.app";
 
-  const response = await fetch(`${baseUrl}/data/${filename}`, {
+  const url = `${baseUrl}/data/${filename}`;
+
+  console.log("Loading CSV:", url);
+
+  const response = await fetch(url, {
     cache: "no-store",
   });
 
+  console.log("Status:", response.status);
+
   if (!response.ok) {
+    const text = await response.text();
+    console.error("Response:", text);
     throw new Error(`Failed to load ${filename}`);
   }
 
