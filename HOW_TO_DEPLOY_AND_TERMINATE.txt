@@ -1,0 +1,171 @@
+============================================================
+  GAT-B GUIDE — DEPLOYMENT & TERMINATION GUIDE
+============================================================
+
+PROJECT NAME: GAT-B Guide
+PRODUCTION URL: https://gatbguide.vercel.app/
+GITHUB REPO: Your connected GitHub repository
+
+============================================================
+1. PREREQUISITES
+============================================================
+
+- Node.js installed (v18+)
+- Git installed
+- GitHub account
+- Vercel account (https://vercel.com)
+- Your project is in: c:\Users\Biswarup Nandi\Desktop\GAT-B
+
+============================================================
+2. FIRST-TIME SETUP (One-time only)
+============================================================
+
+Step A: Create a GitHub Repository
+-----------------------------------
+1. Go to https://github.com/new
+2. Repository name: "gatb-guide" (or any name)
+3. Keep it Public or Private (your choice)
+4. Do NOT initialize with README (we already have code)
+5. Click "Create repository"
+
+Step B: Connect Local Code to GitHub
+--------------------------------------
+Open PowerShell/Terminal in project folder:
+
+   cd "c:\Users\Biswarup Nandi\Desktop\GAT-B"
+   git init
+   git add -A
+   git commit -m "feat: GAT-B Guide — full feature upgrade"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/gatb-guide.git
+   git push -u origin main
+
+(Replace YOUR_USERNAME with your GitHub username)
+
+Step C: Deploy to Vercel
+-------------------------
+1. Go to https://vercel.com
+2. Sign up / Log in with GitHub
+3. Click "Add New..." → "Project"
+4. Import your GitHub repository (gatb-guide)
+5. Framework: Next.js (auto-detected)
+6. Root Directory: ./ (leave default)
+7. Click "Deploy"
+8. Wait for build to complete (2-3 minutes)
+9. Your site is now LIVE!
+
+Step D: Set Custom Domain (Optional)
+--------------------------------------
+1. In Vercel Dashboard → Your Project → Settings → Domains
+2. Add: gatbguide.vercel.app
+3. Vercel provides this subdomain for free
+
+============================================================
+3. UPDATING THE LIVE SITE
+============================================================
+
+After making changes locally:
+
+   cd "c:\Users\Biswarup Nandi\Desktop\GAT-B"
+   git add -A
+   git commit -m "your commit message here"
+   git push
+
+Vercel will automatically rebuild and redeploy within 1-2 minutes.
+
+============================================================
+4. LOCAL DEVELOPMENT
+============================================================
+
+To run the site locally:
+
+   cd "c:\Users\Biswarup Nandi\Desktop\GAT-B"
+   npm run dev
+
+Open: http://localhost:3000
+
+To stop the local server:
+   Press Ctrl+C in the terminal
+
+============================================================
+5. TERMINATING / TAKING DOWN THE SITE
+============================================================
+
+Option A: Pause Deployments (Temporary)
+----------------------------------------
+1. Go to Vercel Dashboard
+2. Select your project
+3. Settings → General → Pause Project
+4. The site will show a Vercel pause page
+
+Option B: Delete from Vercel (Permanent)
+------------------------------------------
+1. Go to Vercel Dashboard
+2. Select your project
+3. Settings → General → Scroll to bottom
+4. Click "Delete Project"
+5. Confirm deletion
+
+Option C: Make GitHub Repo Private
+------------------------------------
+1. Go to your GitHub repo → Settings
+2. Scroll to "Danger Zone"
+3. Click "Change visibility" → Make Private
+   (This does NOT take down Vercel deployment)
+
+============================================================
+6. INSTALLED PACKAGES
+============================================================
+
+Core:
+  - next (15.5.19) — React framework
+  - react & react-dom — UI library
+  - typescript — Type safety
+  - tailwindcss (v4) — CSS framework
+
+UI Components:
+  - @radix-ui/react-accordion — Collapsible sections
+  - @radix-ui/react-select — Dropdown selects
+  - @radix-ui/react-slot — Slot component
+  - class-variance-authority — Component variants
+  - clsx & tailwind-merge — Class utilities
+  - lucide-react — Icons
+
+Theme:
+  - next-themes — Dark/light mode toggle
+
+Data:
+  - papaparse — CSV parsing
+
+To reinstall all dependencies:
+   cd "c:\Users\Biswarup Nandi\Desktop\GAT-B"
+   npm install
+
+============================================================
+7. FULL DEPLOYMENT COMMANDS (QUICK REFERENCE)
+============================================================
+
+# First time:
+   cd "c:\Users\Biswarup Nandi\Desktop\GAT-B"
+   npm install
+   git init
+   git add -A
+   git commit -m "initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/gatb-guide.git
+   git push -u origin main
+   # Then import in Vercel
+
+# Subsequent updates:
+   cd "c:\Users\Biswarup Nandi\Desktop\GAT-B"
+   git add -A
+   git commit -m "update description"
+   git push
+
+# Local development:
+   npm run dev
+
+# Production build test:
+   npm run build
+
+============================================================

@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4: class-based dark mode ── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Custom Animations ── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+/* ── Utility Classes ── */
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.3s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.3s ease-out;
+}
+
+/* ── Base Styles ── */
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Selection Color ── */
+::selection {
+  background-color: #dbeafe;
+  color: #1e3a5f;
+}
+
+.dark ::selection {
+  background-color: #1e3a5f;
+  color: #dbeafe;
+}
+
+/* ── Smooth scrolling ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Custom scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* ── Theme transition (only on body for smooth dark/light swap) ── */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Homepage Background ── */
+.bg-science-pattern {
+  position: relative;
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(59, 130, 246, 0.07), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(139, 92, 246, 0.05), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(14, 165, 233, 0.04), transparent 70%);
+}
+
+.dark .bg-science-pattern {
+  background-color: #020617;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(59, 130, 246, 0.10), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(139, 92, 246, 0.07), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(14, 165, 233, 0.06), transparent 70%);
+}
+
+/* Subtle dot grid overlay for texture */
+.bg-science-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark .bg-science-pattern::before {
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+}
+
+/* Ensure content sits above the dot grid (exclude fixed-position elements) */
+.bg-science-pattern > *:not(.fixed) {
+  position: relative;
+  z-index: 1;
+}

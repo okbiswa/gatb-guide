@@ -1,0 +1,162 @@
+year,institute_id,course,category,min_score,max_score
+2022,JNU002,M.Sc. in Biotechnology (BITM),UR,173.5,200
+2022,JNU002,M.Sc. in Biotechnology (BITM),EWS,155,180
+2022,JNU002,M.Sc. in Biotechnology (BITM),OBC,142.5,165
+2022,JNU002,M.Sc. in Biotechnology (BITM),SC,130,152
+2022,JNU002,M.Sc. in Biotechnology (BITM),ST,121.5,130
+2022,JNU001,M.Sc. in Computational & Integrative Sciences Track-2 (TRTM),UR,163.5,169.5
+2022,JNU001,M.Sc. in Computational & Integrative Sciences Track-2 (TRTM),EWS,143,155
+2022,JNU001,M.Sc. in Computational & Integrative Sciences Track-2 (TRTM),OBC,135,143
+2022,JNU001,M.Sc. in Computational & Integrative Sciences Track-2 (TRTM),SC,124.5,124.5
+2022,JNU001,M.Sc. in Computational & Integrative Sciences Track-2 (TRTM),ST,103.5,103.5
+2024,JNU002,M.Sc. in Biotechnology (BITM),UR,179,187
+2024,JNU002,M.Sc. in Biotechnology (BITM),EWS,175,195.5
+2024,JNU002,M.Sc. in Biotechnology (BITM),OBC,160.5,173
+2024,JNU002,M.Sc. in Biotechnology (BITM),SC,147.5,148.5
+2024,JNU002,M.Sc. in Biotechnology (BITM),PwD,126,126
+2024,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),UR,173,179
+2024,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),EWS,156.5,156.5
+2024,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),OBC,146,158.5
+2024,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),SC,137,140.5
+2024,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),ST,101.5,117.5
+2025,JNU002,M.Sc. in Biotechnology (BITM),UR,191.5,199
+2025,JNU002,M.Sc. in Biotechnology (BITM),EWS,178,185.5
+2025,JNU002,M.Sc. in Biotechnology (BITM),OBC,176.5,184.5
+2025,JNU002,M.Sc. in Biotechnology (BITM),SC,160.5,176.5
+2025,JNU002,M.Sc. in Biotechnology (BITM),ST,147.5,147.5
+2025,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),UR,188,193.5
+2025,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),EWS,167,181
+2025,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),OBC,176,183
+2025,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),SC,155.5,170
+2025,JNU001,M.Sc. in Computational & Integrative Sciences (CISM),ST,124.5,131.5
+2025,BHU001,M.Sc. in Biotechnology,EWS,164,178
+2025,BHU001,M.Sc. in Biotechnology,ST,123,132
+2025,BHU001,M.Sc. in Biotechnology,SC,144,166
+2025,BHU001,M.Sc. in Biotechnology,OBC,175,184
+2025,BHU001,M.Sc. in Biotechnology,UR,183,208
+2025,BHU002,M.Sc. in Molecular and Human Genetics,EWS,158,165
+2025,BHU002,M.Sc. in Molecular and Human Genetics,ST,98,119
+2025,BHU002,M.Sc. in Molecular and Human Genetics,SC,126,151
+2025,BHU002,M.Sc. in Molecular and Human Genetics,OBC,160,177
+2025,BHU002,M.Sc. in Molecular and Human Genetics,UR,173,194
+2021,IITI001,M.Sc. Biotechnology,UR,167,191
+2021,IITI001,M.Sc. Biotechnology,Gen-EWS,178,178
+2021,IITI001,M.Sc. Biotechnology,SC,147.5,147.5
+2021,IITI001,M.Sc. Biotechnology,ST,116,116
+2022,IITI001,M.Sc. Biotechnology,UR,167.5,172
+2023,IITI001,M.Sc. Biotechnology,UR,181,181
+2023,IITI001,M.Sc. Biotechnology,Gen-EWS,164.5,164.5
+2023,IITI001,M.Sc. Biotechnology,OBC-NCL,168,168
+2024,IITI001,M.Sc. Biotechnology,UR,185,193.5
+2024,IITI001,M.Sc. Biotechnology,Gen-EWS,185.5,185.5
+2024,IITI001,M.Sc. Biotechnology,OBC-NCL,166,182
+2024,IITI001,M.Sc. Biotechnology,SC,152,152
+2025,IITI001,M.Sc. Biotechnology,UR,193.5,204
+2025,IITI001,M.Sc. Biotechnology,Gen-EWS,196,196
+2025,IITI001,M.Sc. Biotechnology,OBC-NCL,185.5,189
+2025,IITI001,M.Sc. Biotechnology,SC,156.5,156.5
+2025,IITI001,M.Sc. Biotechnology,ST,146,146
+2021,SPPU001,M.Sc. Biotechnology,UR,167,175
+2022,SPPU001,M.Sc. Biotechnology,UR,151,172
+2023,SPPU001,M.Sc. Biotechnology,UR,164.5,181
+2023,SPPU001,M.Sc. Biotechnology,EWS,164.5,164.5
+2023,SPPU001,M.Sc. Biotechnology,OBC-NCL,168,168
+2024,SPPU001,M.Sc. Biotechnology,UR,175,188
+2024,SPPU001,M.Sc. Biotechnology,EWS,170,180
+2024,SPPU001,M.Sc. Biotechnology,OBC-NCL,165,178
+2024,SPPU001,M.Sc. Biotechnology,SC,150,170
+2024,SPPU001,M.Sc. Biotechnology,ST,140,160
+2025,SPPU001,M.Sc. in Biotechnology,UR,170,180
+2025,SPPU001,M.Sc. in Biotechnology,EWS,150,162
+2025,SPPU001,M.Sc. in Biotechnology,OBC,142,155
+2025,SPPU001,M.Sc. in Biotechnology,SC,120,135
+2025,SPPU001,M.Sc. in Biotechnology,ST,110,122
+2023,CURAJ001,M.Sc. in Biotechnology,UR,135,150
+2024,CURAJ001,M.Sc. in Biotechnology,UR,140,179.5
+2025,CURAJ001,M.Sc. in Biotechnology,UR,155,165
+2023,UOH001,M.Sc. in Biotechnology,UR,160,175
+2023,UOH001,M.Sc. in Biotechnology,EWS,145,158
+2023,UOH001,M.Sc. in Biotechnology,OBC,135,150
+2023,UOH001,M.Sc. in Biotechnology,SC,115,130
+2023,UOH001,M.Sc. in Biotechnology,ST,105,120
+2024,UOH001,M.Sc. in Biotechnology,UR,165,178
+2024,UOH001,M.Sc. in Biotechnology,EWS,148,162
+2024,UOH001,M.Sc. in Biotechnology,OBC,138,152
+2024,UOH001,M.Sc. in Biotechnology,SC,118,132
+2024,UOH001,M.Sc. in Biotechnology,ST,108,122
+2025,UOH001,M.Sc. in Biotechnology,UR,175,185
+2025,UOH001,M.Sc. in Biotechnology,EWS,155,168
+2025,UOH001,M.Sc. in Biotechnology,OBC,148,160
+2025,UOH001,M.Sc. in Biotechnology,SC,125,138
+2025,UOH001,M.Sc. in Biotechnology,ST,115,125
+2023,RGCB001,M.Sc. in Biotechnology,UR,148,160
+2023,RGCB001,M.Sc. in Biotechnology,EWS,139,145
+2023,RGCB001,M.Sc. in Biotechnology,OBC,124,138
+2023,RGCB001,M.Sc. in Biotechnology,SC,106.5,120
+2024,RGCB001,M.Sc. in Biotechnology,UR,150,165
+2024,RGCB001,M.Sc. in Biotechnology,EWS,140,148
+2024,RGCB001,M.Sc. in Biotechnology,OBC,126,140
+2024,RGCB001,M.Sc. in Biotechnology,SC,108,122
+2025,RGCB001,M.Sc. in Biotechnology,UR,175,189
+2025,RGCB001,M.Sc. in Biotechnology,EWS,169,185
+2025,RGCB001,M.Sc. in Biotechnology,OBC,170,180
+2025,RGCB001,M.Sc. in Biotechnology,SC,145,166
+2023,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,UR,145,158
+2023,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,OBC,122,135
+2023,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,SC,105,118
+2024,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,UR,150,162
+2024,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,OBC,125,138
+2024,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,SC,108,122
+2025,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,UR,165,175
+2025,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,OBC,155,165
+2025,DU001,M.Sc. in Plant Molecular Biology & Biotechnology,SC,115,128
+2023,NITD001,M.Sc. in Life Sciences,UR,130,140
+2024,NITD001,M.Sc. in Life Sciences,UR,135,145
+2025,NITD001,M.Sc. in Life Sciences,UR,175,185
+2023,GBU001,M.Sc. in Biotechnology,UR,127.5,135
+2024,GBU001,M.Sc. in Biotechnology,UR,127,138
+2025,GBU001,M.Sc. in Biotechnology,UR,145,152
+2023,IIITD001,M.Tech. in Computational Biology,UR,125,140
+2024,IIITD001,M.Tech. in Computational Biology,UR,130,145
+2025,IIITD001,M.Tech. in Computational Biology,UR,145,160
+2023,NEHU001,M.Sc. in Biotechnology,UR,130,140
+2024,NEHU001,M.Sc. in Biotechnology,UR,135,145
+2025,NEHU001,M.Sc. in Biotechnology,UR,145,155
+2023,JMI001,M.Sc. in Biotechnology,UR,145,155
+2024,JMI001,M.Sc. in Biotechnology,UR,150,160
+2025,JMI001,M.Sc. in Biotechnology,UR,160,170
+2023,CUHP001,M.Sc. in Biotechnology,UR,120,135
+2024,CUHP001,M.Sc. in Biotechnology,UR,127,140
+2025,CUHP001,M.Sc. in Biotechnology,UR,135,150
+2023,PGIMER001,M.Sc. in Medical Biotechnology,UR,150,160
+2024,PGIMER001,M.Sc. in Medical Biotechnology,UR,155,165
+2025,PGIMER001,M.Sc. in Medical Biotechnology,UR,165,175
+2023,MSUB001,M.Sc. in Biotechnology,UR,140,150
+2024,MSUB001,M.Sc. in Biotechnology,UR,145,155
+2025,MSUB001,M.Sc. in Biotechnology,UR,155,170
+2023,CUJ001,M.Sc. in Biotechnology,UR,127.5,140
+2024,CUJ001,M.Sc. in Biotechnology,UR,130,145
+2025,CUJ001,M.Sc. in Biotechnology,UR,150,160
+2023,PONDI001,M.Sc. in Biotechnology,UR,155,183
+2024,PONDI001,M.Sc. in Biotechnology,UR,139,179.5
+2024,PONDI001,M.Sc. in Biotechnology,EWS,148,151
+2024,PONDI001,M.Sc. in Biotechnology,OBC,142.5,161.5
+2024,PONDI001,M.Sc. in Biotechnology,SC,134.5,151
+2024,PONDI001,M.Sc. in Biotechnology,ST,123.5,125.5
+2024,PONDI002,M.Tech. in Computational Biology,UR,127,128.5
+2024,PONDI002,M.Tech. in Computational Biology,EWS,91,114.5
+2024,PONDI002,M.Tech. in Computational Biology,OBC,89.5,128.5
+2024,PONDI002,M.Tech. in Computational Biology,SC,65.5,109.5
+2025,PONDI002,M.Sc. in Biotechnology,UR,165,175
+2023,TEZU001,M.Sc. in Molecular Biology & Biotech,UR,135,150
+2024,TEZU001,M.Sc. in Molecular Biology & Biotech,UR,140,155
+2025,TEZU001,M.Sc. in Molecular Biology & Biotech,UR,150,165
+2023,CUTN001,M.Sc. in Biotechnology,UR,130,140
+2024,CUTN001,M.Sc. in Biotechnology,UR,135,145
+2025,CUTN001,M.Sc. in Biotechnology,UR,150,160
+2023,ICTM001,M.Tech. in Bioprocess Technology,UR,135,150
+2024,ICTM001,M.Tech. in Bioprocess Technology,UR,140,155
+2025,ICTM001,M.Tech. in Bioprocess Technology,UR,150,165
+2023,IAR001,M.Sc. in Biotechnology,UR,127.5,135
+2024,IAR001,M.Sc. in Biotechnology,UR,127,140
+2025,IAR001,M.Sc. in Biotechnology,UR,150,160
