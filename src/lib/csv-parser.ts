@@ -8,7 +8,7 @@ import type { Institute, CutoffRecord } from "./types";
  * Works in both development and Vercel production environments.
  */
 function getDataPath(filename: string): string {
-  return path.join(process.cwd(), "data", filename);
+  return path.join(process.cwd(), "public", "data", filename);
 }
 
 /**
