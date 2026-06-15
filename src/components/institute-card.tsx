@@ -24,19 +24,19 @@ function getMatchBadge(matchType: MatchType) {
   switch (matchType) {
     case MatchType.HIGH_MATCH:
       return (
-        <Badge variant="high" className="ml-auto shrink-0">
+        <Badge variant="high" className="shrink-0 whitespace-nowrap">
           ✅ High Match
         </Badge>
       );
     case MatchType.GOOD_MATCH:
       return (
-        <Badge variant="good" className="ml-auto shrink-0">
+        <Badge variant="good" className="shrink-0 whitespace-nowrap">
           🎯 Good Match
         </Badge>
       );
     case MatchType.AMBITIOUS:
       return (
-        <Badge variant="ambitious" className="ml-auto shrink-0">
+        <Badge variant="ambitious" className="shrink-0 whitespace-nowrap">
           🚀 Ambitious
         </Badge>
       );
@@ -169,23 +169,26 @@ export function InstituteCard({ result, index }: InstituteCardProps) {
     >
       <Accordion type="single" collapsible>
         <AccordionItem value={institute.institute_id} className="border-0">
-          <AccordionTrigger className="px-5 hover:no-underline">
-            <div className="flex items-start gap-3 text-left mr-4 flex-1 min-w-0">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-xs font-semibold shrink-0 mt-0.5">
+          <AccordionTrigger className="px-4 sm:px-5 hover:no-underline">
+            <div className="flex items-center gap-2 sm:gap-3 text-left mr-2 sm:mr-4 flex-1 min-w-0">
+              {/* Rank */}
+              <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-xs font-semibold shrink-0">
                 {index + 1}
               </div>
-              <div className="min-w-0">
-                <p className="font-semibold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+              {/* Name + Programme — truncates to fit */}
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
                   {institute.institute_name}
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 truncate">
                   {institute.programme_offered} • {institute.degree_type}
                 </p>
               </div>
+              {/* Badge — always inline, never wraps */}
               {getMatchBadge(matchType)}
             </div>
           </AccordionTrigger>
-          <AccordionContent className="px-5">
+          <AccordionContent className="px-4 sm:px-5">
             <div className="space-y-4">
               {/* Stats row */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -289,22 +292,24 @@ export function NoDataCard({ institute, index }: NoDataCardProps) {
     >
       <Accordion type="single" collapsible>
         <AccordionItem value={institute.institute_id} className="border-0">
-          <AccordionTrigger className="px-5 hover:no-underline">
-            <div className="flex items-start gap-3 text-left mr-4 flex-1 min-w-0">
-              <div className="min-w-0">
-                <p className="font-medium text-slate-800 dark:text-slate-200 truncate">
+          <AccordionTrigger className="px-4 sm:px-5 hover:no-underline">
+            <div className="flex items-center gap-2 sm:gap-3 text-left mr-2 sm:mr-4 flex-1 min-w-0">
+              {/* Name + Programme — truncates to fit */}
+              <div className="min-w-0 flex-1">
+                <p className="font-medium text-sm sm:text-base text-slate-800 dark:text-slate-200 truncate">
                   {institute.institute_name}
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 truncate">
                   {institute.programme_offered} • {institute.city}, {institute.state}
                 </p>
               </div>
-              <Badge variant="outline" className="ml-auto shrink-0">
+              {/* Badge — always inline, never wraps */}
+              <Badge variant="outline" className="shrink-0 whitespace-nowrap">
                 No Cutoff Data
               </Badge>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="px-5">
+          <AccordionContent className="px-4 sm:px-5">
             <div className="space-y-4 text-sm">
               {isRCB && <RCBInteraction />}
 
