@@ -1,14 +1,10 @@
 import { GraduationCap, Sparkles, PartyPopper, BadgeCheck } from "lucide-react";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { VisitorCounter } from "@/components/visitor-counter";
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden py-16 sm:py-24">
-      {/* Theme toggle — top right */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10">
-        <ThemeToggle />
-      </div>
+
 
       <div className="mx-auto max-w-4xl text-center px-4">
         {/* Results Released Banner */}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SiteHeader } from "@/components/site-header";
+import { AdmissionAdvisor } from "@/components/AdmissionAdvisor";
 import "./globals.css";
 
 const inter = Inter({
@@ -43,7 +45,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="min-h-screen bg-[#fafbfc] dark:bg-slate-950 font-sans antialiased transition-colors duration-300">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <SiteHeader />
+          {children}
+          <AdmissionAdvisor />
+        </ThemeProvider>
       </body>
     </html>
   );

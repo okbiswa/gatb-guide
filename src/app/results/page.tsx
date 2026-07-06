@@ -54,64 +54,18 @@ function ResultsContent() {
 
   return (
     <main className="min-h-screen bg-science-pattern">
-      {/* Fixed top bar — stays in place when scrolling */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 shadow-sm">
-        <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-2">
-          {/* Left: Search Again */}
-          <Link href="/">
-            <Button variant="ghost" size="sm" className="gap-2 shrink-0">
-              <ArrowLeft className="h-4 w-4" />
-              <span className="hidden sm:inline">Search Again</span>
-            </Button>
-          </Link>
-
-          {/* Center: Context info */}
-          <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300 min-w-0">
-            <Search className="h-4 w-4 shrink-0" />
-            <span className="hidden sm:inline truncate">
-              GAT-B Guide • {category} • Score: {score}
-            </span>
-            <span className="sm:hidden truncate">
-              Score: {score}
-            </span>
-          </div>
-
-          {/* Right: Need Help CTA + Theme Toggle */}
-          <div className="flex items-center gap-2 shrink-0">
-            {/* Need Help CTA */}
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 bg-[#0A66C2] hover:bg-[#004182] text-white text-xs font-medium rounded-lg px-3 py-2 shadow-sm transition-all duration-200"
-            >
-              <Linkedin className="h-3.5 w-3.5" />
-              <div className="flex flex-col leading-tight">
-                <span className="font-semibold">Need Help?</span>
-                <span className="text-[10px] opacity-80">Connect Me</span>
-              </div>
-            </a>
-            {/* Mobile: compact icon-only LinkedIn */}
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sm:hidden flex items-center justify-center w-9 h-9 rounded-lg bg-[#0A66C2] text-white shadow-sm"
-              title="Need Help? Connect Me"
-            >
-              <Linkedin className="h-4 w-4" />
-            </a>
-            {/* Theme Toggle */}
-            <ThemeToggle />
-          </div>
-        </div>
-      </div>
-
-      {/* Spacer to push content below fixed header */}
-      <div className="h-14" />
-
       {/* Content */}
       <div className="mx-auto max-w-5xl px-4 py-8">
+        {/* Search Again Link */}
+        <div className="mb-6">
+          <Link href="/">
+            <Button variant="ghost" size="sm" className="gap-2 -ml-3">
+              <ArrowLeft className="h-4 w-4" />
+              <span>Search Again</span>
+            </Button>
+          </Link>
+        </div>
+
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">
