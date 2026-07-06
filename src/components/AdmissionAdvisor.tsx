@@ -60,8 +60,11 @@ export function AdmissionAdvisor() {
           </div>
         ) : (
           messages.map((m) => {
-            // Hide tool result messages from the UI entirely unless they have content
-            if (m.role === 'assistant' && !m.content) return null;
+            // If the message has no content but has tool invocations, show a thinking spinner
+            const isToolCall = m.role === 'assistant' && !m.content && m.toolInvocations && m.toolInvocations.length > 0;
+            
+            // Hide if it's completely empty and not a tool call
+            if (m.role === 'assistant' && !m.content && !isToolCall) return null;
             
             return (
               <div
@@ -86,6 +89,11 @@ export function AdmissionAdvisor() {
                 >
                   {m.role === 'user' ? (
                     m.content
+                  ) : isToolCall ? (
+                    <div className="flex items-center gap-2 text-slate-500 py-1">
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <span className="italic">Thinking...</span>
+                    </div>
                   ) : (
                     <div className="prose prose-sm dark:prose-invert max-w-none prose-p:leading-relaxed prose-pre:p-0">
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
