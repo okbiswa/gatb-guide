@@ -1,26 +1,21 @@
 import Papa from "papaparse";
 import type { Institute, CutoffRecord } from "./types";
 
+import fs from "fs";
+import path from "path";
+
 async function loadCsv(filename: string): Promise<string> {
-  const baseUrl = "https://gatb-guide.vercel.app";
-
-  const url = `${baseUrl}/data/${filename}`;
-
-  console.log("Loading CSV:", url);
-
-  const response = await fetch(url, {
-    cache: "no-store",
-  });
-
-  console.log("Status:", response.status);
-
-  if (!response.ok) {
-    const text = await response.text();
-    console.error("Response:", text);
-    throw new Error(`Failed to load ${filename}`);
+  try {
+    // Read directly from the public/data folder to prevent HTTP fetch issues in Serverless/Localhost
+    const filePath = path.join(process.cwd(), "public", "data", filename);
+    console.log("Reading CSV from filesystem:", filePath);
+    
+    const fileContents = await fs.promises.readFile(filePath, "utf-8");
+    return fileContents;
+  } catch (error) {
+    console.error(`Failed to read ${filename}:`, error);
+    throw new Error(`Failed to load ${filename} from filesystem.`);
   }
-
-  return await response.text();
 }
 
 export async function parseInstitutes(): Promise<Institute[]> {
