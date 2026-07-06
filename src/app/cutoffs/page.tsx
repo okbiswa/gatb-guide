@@ -1,4 +1,4 @@
-import { parseCutoffs } from "@/lib/csv-parser";
+import { parseCutoffs, parseInstitutes } from "@/lib/csv-parser";
 
 export const metadata = {
   title: "Historical Cutoffs | GAT-B Guide",
@@ -7,6 +7,10 @@ export const metadata = {
 
 export default async function CutoffsPage() {
   const cutoffs = await parseCutoffs();
+  const institutes = await parseInstitutes();
+
+  // Create a mapping of institute ID to Name for fast lookup
+  const instituteMap = new Map(institutes.map(inst => [inst.institute_id, inst.institute_name]));
 
   return (
     <main className="min-h-screen bg-science-pattern py-12">
@@ -25,7 +29,7 @@ export default async function CutoffsPage() {
             <table className="w-full text-left text-sm text-slate-600 dark:text-slate-400">
               <thead className="sticky top-0 bg-slate-50 dark:bg-slate-950 text-xs uppercase text-slate-700 dark:text-slate-300 shadow-sm z-10">
                 <tr>
-                  <th className="px-6 py-4 font-semibold">Institute ID</th>
+                  <th className="px-6 py-4 font-semibold">Institute Name</th>
                   <th className="px-6 py-4 font-semibold">Year</th>
                   <th className="px-6 py-4 font-semibold">Category</th>
                   <th className="px-6 py-4 font-semibold">Min Score</th>
@@ -34,8 +38,8 @@ export default async function CutoffsPage() {
               <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
                 {cutoffs.map((cutoff, index) => (
                   <tr key={index} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                    <td className="px-6 py-4 font-medium text-slate-900 dark:text-white">
-                      {cutoff.institute_id}
+                    <td className="px-6 py-4 font-medium text-slate-900 dark:text-white max-w-sm truncate" title={instituteMap.get(cutoff.institute_id) || cutoff.institute_id}>
+                      {instituteMap.get(cutoff.institute_id) || cutoff.institute_id}
                     </td>
                     <td className="px-6 py-4">{cutoff.year}</td>
                     <td className="px-6 py-4">

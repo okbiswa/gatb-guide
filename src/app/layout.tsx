@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -46,7 +47,9 @@ export default function RootLayout({
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="min-h-screen bg-[#fafbfc] dark:bg-slate-950 font-sans antialiased transition-colors duration-300">
         <ThemeProvider>
-          <SiteHeader />
+          <Suspense fallback={<div className="h-16 w-full border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-950/90" />}>
+            <SiteHeader />
+          </Suspense>
           {children}
           <AdmissionAdvisor />
         </ThemeProvider>
