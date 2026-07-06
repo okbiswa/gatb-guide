@@ -30,22 +30,17 @@ export const agentTools = {
         score >= (c.min_score - 15) // Include reach schools
       );
 
-      // Join with institute data and filter out missing institutes
-      const data = relevantCutoffs
-        .map(cutoff => {
-          const institute = institutes.find(i => i.institute_id === cutoff.institute_id);
-          if (!institute) return null; // Institute no longer in the latest dataset
-
-          return {
-            institute_name: institute.institute_name,
-            programme: institute.programme_offered,
-            state: institute.state,
-            year: cutoff.year,
-            min_score: cutoff.min_score,
-            match_type: score >= cutoff.min_score! ? "Safe/Target" : "Reach"
-          };
-        })
-        .filter(Boolean); // Remove nulls
+      // Join with institute data
+      const data = relevantCutoffs.map(cutoff => {
+        const institute = institutes.find(i => i.institute_id === cutoff.institute_id);
+        return {
+          institute_name: institute?.institute_name || cutoff.institute_id,
+          programme: institute?.programme_offered || "Unknown",
+          year: cutoff.year,
+          min_score: cutoff.min_score,
+          match_type: score >= cutoff.min_score! ? "Safe/Target" : "Reach"
+        };
+      });
 
       // Ensure we return an object, not a raw array, to avoid Protobuf crashes
       return { results: data };
