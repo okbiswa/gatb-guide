@@ -14,8 +14,8 @@ export function AdmissionAdvisor() {
     maxToolRoundtrips: 5,
   });
 
-  // Reusable gradient class
-  const themeGradient = "bg-gradient-to-r from-blue-600 via-violet-600 to-blue-600";
+  // Reusable theme color instead of gradient
+  const themeGradient = "bg-blue-600";
 
   if (!isOpen) {
     return (

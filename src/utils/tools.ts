@@ -1,6 +1,7 @@
 import { tool } from "ai";
 import { z } from "zod";
 import { parseInstitutes, parseCutoffs } from "../lib/csv-parser";
+import { generateRecommendations } from "../lib/recommendation-engine";
 
 export const agentTools = {
   getInstitutes: tool({
@@ -22,28 +23,30 @@ export const agentTools = {
       const cutoffs = await parseCutoffs();
       const institutes = await parseInstitutes();
 
-      // Find matching cutoffs for the given category
-      // We will filter cutoffs where the user's score is close to or above the min_score
-      const relevantCutoffs = cutoffs.filter(c => 
-        c.category === category && 
-        c.min_score !== null && 
-        score >= (c.min_score - 15) // Include reach schools
-      );
+      // Use the robust recommendation engine instead of raw filtering to prevent LLM token overflow/lag
+      const recommendations = generateRecommendations(score, category, institutes, cutoffs);
+      
+      // Take only the top 12 best opportunities and top 3 premier to avoid token limits
+      const topMatches = recommendations.bestOpportunities.slice(0, 12).map(r => ({
+        institute_name: r.institute.institute_name,
+        programme: r.institute.programme_offered,
+        state: r.institute.state,
+        match_type: r.matchType,
+        weighted_cutoff: r.weightedCutoff,
+        margin: r.difference
+      }));
 
-      // Join with institute data
-      const data = relevantCutoffs.map(cutoff => {
-        const institute = institutes.find(i => i.institute_id === cutoff.institute_id);
-        return {
-          institute_name: institute?.institute_name || cutoff.institute_id,
-          programme: institute?.programme_offered || "Unknown",
-          year: cutoff.year,
-          min_score: cutoff.min_score,
-          match_type: score >= cutoff.min_score! ? "Safe/Target" : "Reach"
-        };
-      });
+      const topPremier = recommendations.premier.slice(0, 3).map(r => ({
+        institute_name: r.institute.institute_name,
+        programme: r.institute.programme_offered,
+        state: r.institute.state,
+        match_type: r.matchType,
+      }));
 
-      // Ensure we return an object, not a raw array, to avoid Protobuf crashes
-      return { results: data };
+      return { 
+        bestMatches: topMatches,
+        premierMatches: topPremier
+      };
     },
   }),
 };
