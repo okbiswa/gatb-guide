@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { Users } from "lucide-react";
 
-const COUNTER_NAMESPACE = "gatb-guide-live";
+const COUNTER_NAMESPACE = "gatb-guide";
 const COUNTER_KEY = "visitors";
-const API_BASE = "https://api.counterapi.dev/v1";
+const API_BASE = "https://abacus.jasoncameron.dev";
 
 export function VisitorCounter() {
   const [count, setCount] = useState<number | null>(null);
@@ -18,12 +18,12 @@ export function VisitorCounter() {
 
         if (alreadyCounted) {
           const res = await fetch(
-            `${API_BASE}/${COUNTER_NAMESPACE}/${COUNTER_KEY}`,
+            `${API_BASE}/get/${COUNTER_NAMESPACE}/${COUNTER_KEY}`,
             { cache: "no-store" }
           );
           if (res.ok) {
             const data = await res.json();
-            setCount(data.count);
+            setCount(data.value);
           } else {
             setError(true);
           }
@@ -31,13 +31,13 @@ export function VisitorCounter() {
         }
 
         const res = await fetch(
-          `${API_BASE}/${COUNTER_NAMESPACE}/${COUNTER_KEY}/up`,
+          `${API_BASE}/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`,
           { cache: "no-store" }
         );
 
         if (res.ok) {
           const data = await res.json();
-          setCount(data.count);
+          setCount(data.value);
           sessionStorage.setItem("visitor_counted", "true");
         } else {
           setError(true);
@@ -67,7 +67,7 @@ export function VisitorCounter() {
         <strong className="text-slate-800 dark:text-slate-200 font-bold tabular-nums">
           {count.toLocaleString()}
         </strong>{" "}
-        Students got benefited
+        students benefited
       </span>
     </div>
   );
