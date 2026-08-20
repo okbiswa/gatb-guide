@@ -65,7 +65,7 @@ export function VisitorCounter() {
       <Users className="h-4 w-4 text-emerald-500 dark:text-emerald-400 shrink-0" />
       <span>
         <strong className="text-slate-800 dark:text-slate-200 font-bold tabular-nums">
-          {count.toLocaleString()}
+          {(count + 950 - 1).toLocaleString()}+
         </strong>{" "}
         students benefited
       </span>
